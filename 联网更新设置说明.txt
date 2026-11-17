@@ -1,0 +1,31 @@
+澳彩助手 V1.4 联网更新说明
+
+一、当前版本的更新方式
+1. 安卓应用启动时，优先打开 GitHub Pages 网页：
+   https://mm517230.github.io/Repository-name/
+2. 如果没有网络或网页暂时无法访问，会自动切换到 APK 内置网页。
+3. 日常只修改网页功能时，只需更新仓库根目录的 index.html；GitHub Actions 发布成功后，应用下次启动会加载新版网页，无需重新安装 APK。
+4. 修改 Android 原生代码、权限或应用壳功能时，仍需重新编译并安装新版 APK。
+
+二、上传到 GitHub 仓库
+将本工程目录 aocai-android 内的内容放到仓库根目录，保留原有目录结构。重点包括：
+- index.html（仓库根目录）
+- .nojekyll
+- .github/workflows/deploy-pages.yml
+- app/src/main/AndroidManifest.xml
+- app/src/main/java/com/aocai/assistant/MainActivity.kt
+- app/src/main/assets/index.html
+- app/build.gradle
+
+三、首次启用 GitHub Pages（只需做一次）
+1. 打开 https://github.com/mm517230/Repository-name
+2. 进入 Settings（设置）→ Pages
+3. 在 Build and deployment 的 Source 选择 GitHub Actions
+4. 回到 Actions，运行 Publish 澳彩助手 Web（或推送提交触发）
+5. 等待绿色成功标记。网页地址为：
+   https://mm517230.github.io/Repository-name/
+
+四、以后更新网页
+只需替换仓库根目录 index.html，并同步替换 app/src/main/assets/index.html（用于离线备用），提交后等待 Pages 工作流成功。已安装联网更新版 APK 的用户下次打开应用即可加载新网页。
+
+注意：GitHub Pages 首次发布需要仓库 Pages 设置允许 GitHub Actions。若仓库名称或所有者改变，必须同步修改 MainActivity.kt 中 ONLINE_URL。

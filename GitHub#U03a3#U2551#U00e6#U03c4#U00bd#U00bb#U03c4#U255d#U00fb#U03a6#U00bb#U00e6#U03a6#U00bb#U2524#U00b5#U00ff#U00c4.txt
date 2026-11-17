@@ -1,0 +1,19 @@
+澳彩 AI 智能助手 V1.4 — GitHub 云端编译版
+
+本包已加入 GitHub Actions 自动构建配置。你不需要在手机或电脑安装 Android Studio。
+
+【首次设置】
+1. 登录 GitHub（https://github.com），创建一个新仓库，例如 aocai-android。
+2. 解压本 ZIP，打开里面的 aocai-android 文件夹。
+3. 将 aocai-android 文件夹里面的所有内容和隐藏文件（特别是 .github 文件夹）上传到仓库根目录。不要把外层 aocai-android 文件夹再套一层。
+4. 上传完成后，打开仓库的 Actions 页面。如果提示启用 Actions，点击启用。
+5. 工作流会在 push 到 main/master 后自动运行；也可以在 Actions 中选择 Build Android APK，再点 Run workflow。
+6. 等待工作流显示绿色成功，打开该次运行，在 Artifacts 区域下载 aocai-assistant-v1.3-debug-apk。
+7. 解压下载的 artifact，里面的 app-debug.apk 就是可安装的测试版 APK。把 APK 发到安卓手机安装即可。
+
+【说明】
+- 云端构建使用 GitHub Actions，自动生成 Android debug APK。Debug APK 已使用 Android 调试签名，可用于测试安装；这不是面向应用商店发布的正式 release 签名包。
+- 此工作流不会上传你的签名密钥，也不需要配置 GitHub Secrets。
+- 工程 applicationId：com.aocai.assistant；版本：1.3；最低 Android：6.0（API 23）。
+- 首次上传源码仍需要你登录 GitHub 并创建仓库。不要把 GitHub 密码或验证码发给任何人。
+- 编译成功与否以 GitHub Actions 实际运行结果为准；目前尚未在 GitHub 云端执行构建。
