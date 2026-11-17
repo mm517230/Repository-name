@@ -588,3 +588,26 @@ pointer-events:none;
 }
 </style>
 <div id="entryToast">赌中就洗脚</div>
+<script>
+(function(){
+ const t=document.getElementById('entryToast');
+ if(!t)return;
+ t.style.animation='none';
+ t.style.position='fixed';
+ t.style.left='50%';
+ t.style.bottom='25px';
+ t.style.transform='translateX(-50%)';
+ t.style.zIndex='999999';
+ t.style.background='#202938';
+ t.style.color='#fff';
+ t.style.padding='12px 22px';
+ t.style.borderRadius='30px';
+ t.style.fontSize='16px';
+ t.style.fontWeight='bold';
+ t.style.opacity='1';
+ t.style.transition='opacity .3s';
+ t.style.pointerEvents='none';
+ setTimeout(()=>t.style.opacity='0',3000);
+})();
+</script>
+
